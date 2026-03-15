@@ -1,8 +1,6 @@
-import axios from 'axios';
+﻿import axios from 'axios';
 
-// Uses REACT_APP_API_URL from .env, falls back to same-origin /api (for production)
-// In development this must match your backend port exactly
-const API_BASE = process.env.REACT_APP_API_URL || '/api';
+const API_BASE = 'https://resume-ai-backend.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -26,12 +24,11 @@ export const resumeAPI = {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
   },
-  analyzeResume:      (resumeId)                          => api.post('/resume/analyze',                { resumeId }),
-  matchJob:           (resumeId, jobDescription)          => api.post('/resume/job-match',              { resumeId, jobDescription }),
-  generateQuestions:  (resumeId, jobDescription, difficulty) => api.post('/interview/generate-questions', { resumeId, jobDescription, difficulty }),
-  submitAnswer:       (question, answer, jobRole)         => api.post('/interview/feedback',            { question, answer, jobRole }),
-  health:             ()                                  => api.get('/health')
+  analyzeResume:     (resumeId)                             => api.post('/resume/analyze',                { resumeId }),
+  matchJob:          (resumeId, jobDescription)             => api.post('/resume/job-match',              { resumeId, jobDescription }),
+  generateQuestions: (resumeId, jobDescription, difficulty) => api.post('/interview/generate-questions',  { resumeId, jobDescription, difficulty }),
+  submitAnswer:      (question, answer, jobRole)            => api.post('/interview/feedback',            { question, answer, jobRole }),
+  health:            ()                                     => api.get('/health')
 };
 
 export default api;
-
