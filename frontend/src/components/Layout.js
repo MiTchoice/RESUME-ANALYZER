@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useResume } from '../context/ResumeContext';
 import {
@@ -76,6 +76,13 @@ export default function Layout() {
             {!collapsed && <span>Reset / New</span>}
           </button>
         </div>
+        {/* Creator */}
+        {!collapsed && (
+          <div style={{padding:'12px 16px', borderTop:'1px solid #1f2937'}}>
+            <p style={{fontSize:'11px', color:'#6366f1', fontWeight:600}}>Mitrasen Yadav</p>
+            <p style={{fontSize:'10px', color:'#4b5563', marginTop:'2px'}}>M.Tech CSE · NIT Hamirpur</p>
+          </div>
+        )}
       </aside>
 
       {/* Main content */}
@@ -87,3 +94,4 @@ export default function Layout() {
     </div>
   );
 }
+

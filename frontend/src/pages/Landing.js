@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Zap, Target, MessageSquare, TrendingUp, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -93,8 +93,9 @@ export default function Landing() {
       </section>
 
       <footer className="text-center py-8 text-gray-600 text-sm border-t border-gray-800">
-        <p>Built with React + Node.js + OpenAI API · ResumeAI 2024</p>
+        <p>Built with React + Node.js + OpenAI API Â· ResumeAI 2024</p>
       </footer>
     </div>
   );
 }
+
